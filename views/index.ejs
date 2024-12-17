@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="input-search">
+      <h1>Web scraper</h1>
+      <form id="scrapeForm" action="http://localhost:3000/scrape" method="post">
+        <input type="text" name="url" id="url" placeholder="Enter URL" />
+        <button type="submit">Scrape</button>
+      </form>
+    </div>
+
+    <div class="products_container">
+      <% if (products && products.length > 0) { %>
+      <h3>Products Scraping:</h3>
+      <div class="div-card">
+        <% products.forEach(product => { %>
+        <div class="card">
+          <img src="<%= product.image %>" alt="<%= product.name %>" />
+          <strong><%= product.name.slice(0, 40) %></strong>
+          <div class="info-product">
+            <p><%= product.price %> €</p>
+            <div class="select-option">
+              <button
+                class="remove"
+                data-url="<%= product.url %>"
+                type="submit"
+              >
+                Remove
+              </button>
+              <a href="<%= product.url %>">Link</a>
+            </div>
+          </div>
+        </div>
+        <% }) %> <% } %>
+      </div>
+    </div>
+  </body>
+
+  <script src="script.js"></script>
+  <script>
+    if (document.querySelector(".div-card")) {
+      setInterval(() => {
+        location.reload(); // refresh the page every 10 seconds
+      }, 10000); 
+    }
+  </script>
+</html>
