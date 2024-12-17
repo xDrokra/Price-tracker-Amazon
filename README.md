@@ -46,3 +46,14 @@ A local application to track product prices on Amazon (and similar websites if s
 ## Notes
 - This app is intended to work locally only and does not require external hosting.
 - Make sure you have Node.js installed on your machine.
+
+## Dependencies
+- **Node.js**
+- **Puppeteer**
+- **Express.js**
+- **SQLite**
+- **Node-cron**
+- **Nodemailer**
+
+## License
+This project is licensed under the MIT License.
