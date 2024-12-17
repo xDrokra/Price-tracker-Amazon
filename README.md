@@ -13,7 +13,7 @@ A local application to track product prices on Amazon (and similar websites if s
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/price-tracker.git
-   cd price-tracker
+   cd Price-tracker-Amazon/
    ```
 2. **Install dependencies**:
    ```bash
